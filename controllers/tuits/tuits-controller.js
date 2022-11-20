@@ -13,10 +13,10 @@ const findTuits  = (req, res) => {
     res.json(tuits);
 }
 const updateTuit = (req, res) => {
-  const tuitdIdToUpdate = parseInt(req.params.tid);
+  const tuitdIdToUpdate = req.params.tid;
   const updates = req.body;
   const tuitIndex = tuits.findIndex(
-    (t) => t._id === tuitdIdToUpdate)
+    (t) => toString(t._id) === tuitdIdToUpdate)
   tuits[tuitIndex] = 
     {...tuits[tuitIndex], ...updates};
     console.log(updates)
@@ -24,10 +24,10 @@ const updateTuit = (req, res) => {
   
 }
 const deleteTuit = (req, res) => {
-  const tuitdIdToDelete = parseInt(req.params.tid);
+  const tuitdIdToDelete = req.params.tid;
   console.log('delete tuit:' + tuitdIdToDelete);
   tuits = tuits.filter((t) =>
-    t._id !== tuitdIdToDelete);
+    toString(t._id) !== tuitdIdToDelete);
   
   // res.sendStatus(200);
   res.json(tuits)
