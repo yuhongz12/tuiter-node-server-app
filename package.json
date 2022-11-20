@@ -3,9 +3,11 @@
   "name": "tuiter-node-server-app",
   "version": "1.0.0",
   "description": "Node.js HTTP web server for the Tuiter application",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start:dev": "nodemon app.js"
   },
   "author": "Yuhong Zhao",
   "license": "ISC",
