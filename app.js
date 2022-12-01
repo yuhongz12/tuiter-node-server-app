@@ -15,7 +15,7 @@ const options = {
 }
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
  || 'mongodb://localhost:27017/tuiter';
-mongoose.connect(CONNECTION_STRING);
+mongoose.connect(CONNECTION_STRING, options);
 
 app.use(cors())
 // app.get('/hello', (req, res) => {
